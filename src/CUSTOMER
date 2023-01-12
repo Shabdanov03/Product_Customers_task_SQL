@@ -126,9 +126,15 @@ FROM products
 WHERE country ILIKE 'M%';
 
 --6. Баардык кардардын(Customers) аттарын жана кардарга тийешелуу карзинанын(Basket_терин) аттарын сорттоп чыгар.(asc,desc)
+--ASCENDING------
 SELECT first_name, basket_name
 FROM customers
-         JOIN basket b on customers.id = b.customer_id;
+         JOIN basket b on customers.id = b.customer_id  ORDER BY basket_name ;
+
+-- DESCENDING------
+SELECT first_name, basket_name
+FROM customers
+         JOIN basket b on customers.id = b.customer_id  ORDER BY basket_name DESC ;
 
 --7. Кардардын аты жана кардардын продуктулары чыксын.
 SELECT first_name, name
